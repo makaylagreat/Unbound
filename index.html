@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unbound — A Women's Reclamation Retreat</title>
+<title>Unbound. A Women's Reclamation Retreat</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
     line-height: 1.75;
     overflow-x: hidden;
   }
-  /* ── NAV ── */
+  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
@@ -67,7 +67,7 @@
     transition: all 0.3s;
   }
   .nav-cta:hover { background: var(--ember); color: var(--bone); }
-  /* ── HERO ── */
+  /* HERO */
   .hero {
     min-height: 100vh;
     display: flex; flex-direction: column;
@@ -143,7 +143,7 @@
     0%, 100% { opacity: 0.3; transform: scaleY(1); }
     50% { opacity: 1; transform: scaleY(1.2); }
   }
-  /* ── DIVIDER ── */
+  /* DIVIDER */
   .divider {
     display: flex; align-items: center; justify-content: center;
     gap: 1rem; padding: 0 4rem;
@@ -153,7 +153,7 @@
   .divider::before, .divider::after {
     content: ''; flex: 1; height: 1px; background: var(--smoke);
   }
-  /* ── SECTIONS ── */
+  /* SECTIONS */
   section { padding: 7rem 0; }
   .container { max-width: 1100px; margin: 0 auto; padding: 0 4rem; }
   .container-narrow { max-width: 780px; margin: 0 auto; padding: 0 4rem; }
@@ -168,7 +168,7 @@
     margin-bottom: 2rem;
   }
   .section-title em { font-style: italic; color: var(--sand); }
-  /* ── INVITATION ── */
+  /* INVITATION */
   .invitation { background: var(--soil); }
   .invitation-quote {
     font-family: 'Cormorant Garamond', serif;
@@ -196,9 +196,9 @@
     padding-left: 1.2rem; position: relative;
   }
   .for-the-woman li::before {
-    content: '—'; position: absolute; left: 0; color: var(--ember);
+    content: '·'; position: absolute; left: 0; color: var(--ember);
   }
-  /* ── EXPERIENCE ── */
+  /* EXPERIENCE */
   .experience { background: var(--night); }
   .modalities-grid {
     display: grid; grid-template-columns: repeat(3, 1fr);
@@ -214,6 +214,14 @@
   .modality:hover { background: var(--smoke); }
   .modality:nth-child(3n) { border-right: none; }
   .modality:nth-child(4), .modality:nth-child(5), .modality:nth-child(6) { border-bottom: none; }
+  /* 7th modality spans full width as the closing practice */
+  .modality:nth-child(7) {
+    grid-column: 1 / -1;
+    border-right: none;
+    border-bottom: none;
+    border-top: 1px solid var(--smoke);
+    text-align: center;
+  }
   .modality-symbol {
     font-size: 1.1rem; color: var(--terracotta); margin-bottom: 1rem;
     font-family: 'Cormorant Garamond', serif;
@@ -223,9 +231,9 @@
     color: var(--bone); margin-bottom: 0.75rem; font-weight: 400;
   }
   .modality-desc { font-size: 0.9rem; color: var(--ash); line-height: 1.7; }
-  /* ── ARC / WEEKEND ── */
+  /* ARC / WEEKEND */
   .arc { background: var(--soil); }
-  .arc-days { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 4rem; }
+  .arc-days { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; margin-top: 4rem; }
   .arc-day { background: var(--smoke); padding: 2.5rem; }
   .arc-day-header {
     font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
@@ -245,7 +253,7 @@
   }
   .arc-day li::before { content: '·'; position: absolute; left: 0; color: var(--ember); }
   .arc-day li:last-child { border-bottom: none; }
-  /* ── INVESTMENT ── */
+  /* INVESTMENT */
   .investment { background: var(--night); }
   .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 4rem; }
   .pricing-card {
@@ -276,7 +284,7 @@
     border-bottom: 1px solid rgba(255,255,255,0.05);
     display: flex; gap: 0.75rem; align-items: flex-start;
   }
-  .pricing-list li::before { content: '—'; color: var(--ember); flex-shrink: 0; }
+  .pricing-list li::before { content: '·'; color: var(--ember); flex-shrink: 0; }
   .pricing-list li:last-child { border-bottom: none; }
   .scholarship-note {
     margin-top: 3rem; padding: 2rem;
@@ -285,7 +293,7 @@
     font-style: italic; text-align: center; line-height: 1.8;
   }
   .scholarship-note strong { color: var(--sand); font-weight: 400; font-style: normal; }
-  /* ── GUIDE ── */
+  /* GUIDE */
   .guide { background: var(--soil); }
   .guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; margin-top: 4rem; }
   .guide-photo {
@@ -318,8 +326,8 @@
     border-bottom: 1px solid rgba(255,255,255,0.05);
     padding-left: 1.25rem; position: relative;
   }
-  .guide-credentials li::before { content: '—'; position: absolute; left: 0; color: var(--ember); }
-  /* ── FAQ ── */
+  .guide-credentials li::before { content: '·'; position: absolute; left: 0; color: var(--ember); }
+  /* FAQ */
   .faq { background: var(--night); }
   .faq-list { margin-top: 4rem; }
   .faq-item { border-bottom: 1px solid var(--smoke); }
@@ -347,7 +355,7 @@
     padding-bottom: 1.75rem;
     color: var(--ash); font-size: 0.95rem; line-height: 1.9;
   }
-  /* ── APPLICATION FORM ── */
+  /* APPLICATION FORM */
   .apply { background: var(--soil); }
   .apply-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 6rem; align-items: start; margin-top: 4rem; }
   .apply-intro { color: var(--ash); line-height: 1.9; margin-bottom: 1.5rem; }
@@ -420,7 +428,7 @@
     font-size: 1.5rem; font-weight: 300; color: var(--bone); margin-bottom: 0.5rem;
   }
   .form-success p { font-size: 0.9rem; color: var(--ash); }
-  /* ── CLOSING CTA ── */
+  /* CLOSING CTA */
   .closing {
     background: var(--night); padding: 10rem 0;
     text-align: center; position: relative; overflow: hidden;
@@ -464,7 +472,7 @@
     font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--ash);
   }
-  /* ── FOOTER ── */
+  /* FOOTER */
   footer {
     background: var(--soil);
     padding: 3rem 4rem;
@@ -480,13 +488,13 @@
     font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--ash); text-align: right; line-height: 1.9;
   }
-  /* ── ANIMATIONS ── */
+  /* ANIMATIONS */
   .fade-up {
     opacity: 0; transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
   }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media (max-width: 900px) {
     nav { padding: 1.25rem 2rem; }
     .nav-links { display: none; }
@@ -495,6 +503,7 @@
     .modalities-grid { grid-template-columns: 1fr 1fr; }
     .modality:nth-child(3n) { border-right: 1px solid var(--smoke); }
     .modality:nth-child(2n) { border-right: none; }
+    .modality:nth-child(7) { grid-column: 1 / -1; }
     .arc-days { grid-template-columns: 1fr; }
     .pricing-grid { grid-template-columns: 1fr; }
     .guide-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -511,6 +520,7 @@
   <a href="#" class="nav-logo">Unbound</a>
   <ul class="nav-links">
     <li><a href="#experience">The Experience</a></li>
+    <li><a href="venue.html">The Space</a></li>
     <li><a href="#investment">Investment</a></li>
     <li><a href="#guide">Your Guide</a></li>
     <li><a href="#faq">FAQ</a></li>
@@ -522,7 +532,7 @@
   <p class="hero-eyebrow">A Women's Reclamation Retreat</p>
   <h1 class="hero-title">Unbound</h1>
   <p class="hero-subtitle">From Performance to Presence</p>
-  <p class="hero-meta">Southern Utah &nbsp;·&nbsp; September 2026</p>
+  <p class="hero-meta">Southern Utah &nbsp;·&nbsp; September 10-13, 2026</p>
   <a href="#apply" class="hero-cta">Reserve Your Spot</a>
   <div class="hero-scroll">
     <div class="scroll-line"></div>
@@ -538,17 +548,17 @@
         "She arrives as who she's been performing to be.<br>She leaves more connected to who she actually is."
       </blockquote>
       <p class="invitation-body">
-        Most women have spent years — <strong>decades</strong> — performing. Performing competence. Performing ease. Performing for partners, families, careers, and a culture that rewards self-erasure with acceptance.
+        Most women have spent years, <strong>decades</strong>, performing. Performing competence. Performing ease. Performing for partners, families, careers, and a culture that rewards self-erasure with acceptance.
       </p>
       <p class="invitation-body">
-        Unbound is a weekend retreat for women who are <strong>done</strong>. Done shrinking. Done living on other people's terms. Women who sense there is a version of themselves beneath all the roles — and are ready to find her.
+        Unbound is a weekend retreat for women who are <strong>done</strong>. Done shrinking. Done living on other people's terms. Women who sense there is a version of themselves beneath all the roles, and are ready to find her.
       </p>
       <div class="for-the-woman">
-        <h3>This is for the woman who —</h3>
+        <h3>This is for the woman who</h3>
         <ul>
           <li>Feels exhausted by the weight of being "on" for everyone else</li>
           <li>Has been high-achieving but secretly feels disconnected from herself</li>
-          <li>Is in a season of transition — career, relationship, identity</li>
+          <li>Is in a season of transition: career, relationship, identity</li>
           <li>Is drawn to somatic practice but hasn't had space to go deep</li>
           <li>Is ready to stop optimizing and start inhabiting</li>
           <li>Suspects there is more of herself waiting to be reclaimed</li>
@@ -563,12 +573,17 @@
     <div class="fade-up">
       <span class="section-eyebrow">The Experience</span>
       <h2 class="section-title">The <em>Modalities</em></h2>
-      <p style="color: var(--ash); max-width: 560px; font-size: 0.95rem;">Every element of the weekend serves a single arc: arrival → opening → descent → integration → emergence. These aren't activities. They're portals.</p>
+      <p style="color: var(--ash); max-width: 560px; font-size: 0.95rem;">Every element of the weekend serves a single arc: arrival, opening, descent, integration, emergence. These aren't activities. They're portals.</p>
       <div class="modalities-grid">
         <div class="modality">
           <div class="modality-symbol">✦</div>
           <div class="modality-name">Yoga</div>
           <p class="modality-desc">Grounding and arriving in the body. Each morning, a practice to call yourself back in.</p>
+        </div>
+        <div class="modality">
+          <div class="modality-symbol">☾</div>
+          <div class="modality-name">Meditation</div>
+          <p class="modality-desc">Stillness as a practice. The quiet beneath the noise. Meeting yourself without distraction.</p>
         </div>
         <div class="modality">
           <div class="modality-symbol">◉</div>
@@ -583,7 +598,7 @@
         <div class="modality">
           <div class="modality-symbol">◇</div>
           <div class="modality-name">Sensual Movement</div>
-          <p class="modality-desc">Reawakening aliveness. Connection to the feminine body — not for anyone else. For you.</p>
+          <p class="modality-desc">Reawakening aliveness. Connection to the feminine body. Not for anyone else. For you.</p>
         </div>
         <div class="modality">
           <div class="modality-symbol">∿</div>
@@ -607,33 +622,44 @@
       <h2 class="section-title">The <em>Weekend</em></h2>
       <div class="arc-days">
         <div class="arc-day">
-          <div class="arc-day-header">Friday Evening</div>
+          <div class="arc-day-header">Thursday Evening · Sept 10</div>
           <div class="arc-day-title">Arrival &amp; Opening</div>
           <ul>
             <li>Arrive, settle, be welcomed</li>
             <li>Communal dinner</li>
-            <li>Opening circle — what did you leave at the door?</li>
+            <li>Opening circle: what did you leave at the door?</li>
             <li>Candlelit meditation &amp; first journal prompt</li>
           </ul>
         </div>
         <div class="arc-day">
-          <div class="arc-day-header">Saturday</div>
-          <div class="arc-day-title">Descent &amp; Liberation</div>
+          <div class="arc-day-header">Friday · Sept 11</div>
+          <div class="arc-day-title">Opening &amp; Descent</div>
           <ul>
-            <li>Morning yoga</li>
+            <li>Morning yoga &amp; meditation</li>
             <li>Somatic breathwork ceremony</li>
             <li>Guided hike through Southern Utah wilderness</li>
             <li>Free time &amp; integration journaling</li>
             <li>Communal dinner</li>
-            <li>Ecstatic dance &amp; sensual movement</li>
+            <li>Evening reflection circle</li>
           </ul>
         </div>
         <div class="arc-day">
-          <div class="arc-day-header">Sunday</div>
+          <div class="arc-day-header">Saturday · Sept 12</div>
+          <div class="arc-day-title">Descent &amp; Liberation</div>
+          <ul>
+            <li>Morning yoga</li>
+            <li>Sensual movement practice</li>
+            <li>Free time &amp; integration journaling</li>
+            <li>Communal dinner</li>
+            <li>Ecstatic dance ceremony</li>
+          </ul>
+        </div>
+        <div class="arc-day">
+          <div class="arc-day-header">Sunday · Sept 13</div>
           <div class="arc-day-title">Integration &amp; Emergence</div>
           <ul>
             <li>Gentle morning yoga &amp; meditation</li>
-            <li>Final circle — who are you taking home?</li>
+            <li>Final circle: who are you taking home?</li>
             <li>Closing ritual</li>
             <li>Post-retreat integration resources</li>
           </ul>
@@ -648,15 +674,15 @@
     <div class="fade-up">
       <span class="section-eyebrow">The Investment</span>
       <h2 class="section-title">Your Place <em>at the Fire</em></h2>
-      <p style="color: var(--ash); max-width: 520px; font-size: 0.95rem;">This retreat is intentionally small — between 10 and 15 women — so that every woman receives the depth of experience she came for.</p>
+      <p style="color: var(--ash); max-width: 520px; font-size: 0.95rem;">This retreat is intentionally small, between 10 and 15 women, so that every woman receives the depth of experience she came for.</p>
       <div class="pricing-grid">
         <div class="pricing-card">
           <div class="pricing-tier">Shared Room</div>
           <div class="pricing-price">$1,800</div>
           <div class="pricing-note">Per person · All inclusive</div>
           <ul class="pricing-list">
-            <li>2 nights shared accommodation</li>
-            <li>All meals — Friday dinner through Sunday lunch</li>
+            <li>3 nights shared accommodation</li>
+            <li>All meals: Thursday dinner through Sunday lunch</li>
             <li>All sessions &amp; specialist facilitation</li>
             <li>Post-retreat integration guide</li>
             <li>Access to the full Unbound container</li>
@@ -668,8 +694,8 @@
           <div class="pricing-price">$2,200</div>
           <div class="pricing-note">Per person · All inclusive</div>
           <ul class="pricing-list">
-            <li>2 nights private accommodation</li>
-            <li>All meals — Friday dinner through Sunday lunch</li>
+            <li>3 nights private accommodation</li>
+            <li>All meals: Thursday dinner through Sunday lunch</li>
             <li>All sessions &amp; specialist facilitation</li>
             <li>Post-retreat integration guide</li>
             <li>Access to the full Unbound container</li>
@@ -678,7 +704,7 @@
       </div>
       <div class="scholarship-note">
         A limited number of <strong>need-based partial scholarships</strong> are available.<br>
-        If cost is a barrier, reach out — no woman who is ready will be turned away for financial reasons.
+        If cost is a barrier, reach out. No woman who is ready will be turned away for financial reasons.
       </div>
     </div>
   </div>
@@ -696,10 +722,10 @@
           <h2 class="guide-name">Makayla<br>Greathouse</h2>
           <div class="guide-title">Founder, Elevate Intent</div>
           <p class="guide-bio">
-            Makayla is a People &amp; Culture strategist, leadership coach, and lifelong student of what it means to live an <strong>unperformed life</strong>. She has spent years studying the gap between who we perform to be and who we actually are — in organizations, in relationships, and in ourselves.
+            Makayla is a People &amp; Culture strategist, leadership coach, and lifelong student of what it means to live an <strong>unperformed life</strong>. She has spent years studying the gap between who we perform to be and who we actually are, in organizations, in relationships, and in ourselves.
           </p>
           <p class="guide-bio">
-            She is the founder of Elevate Intent and has worked with leaders across some of the world's most ambitious companies. She is also a van-dweller, a writer, a dog mom, a yogi, and a woman who has done her <strong>own descent</strong> — and come back changed.
+            She is the founder of Elevate Intent and has worked with leaders across some of the world's most ambitious companies. She is also a van-dweller, a writer, a dog mom, a yogi, and a woman who has done her <strong>own descent</strong> and come back changed.
           </p>
           <p class="guide-bio" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--sand);">
             Unbound was born from her own reclamation. She built it for the women she recognized in herself.
@@ -728,7 +754,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">No. All that is required is willingness. The specialists who lead each session are experienced in working with women at all levels. You will never be asked to do anything beyond your capacity — only beyond your comfort zone.</div>
+            <div class="faq-answer-inner">No. All that is required is willingness. The specialists who lead each session are experienced in working with women at all levels. You will never be asked to do anything beyond your capacity. Only beyond your comfort zone.</div>
           </div>
         </div>
         <div class="faq-item">
@@ -737,7 +763,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">From Friday dinner through Sunday lunch — all meals, all facilitated sessions, all specialist fees, your accommodation, and post-retreat integration materials. You arrive with yourself and your bag. Everything else is held.</div>
+            <div class="faq-answer-inner">From Thursday dinner through Sunday lunch: all meals, all facilitated sessions, all specialist fees, your accommodation, and post-retreat integration materials. You arrive with yourself and your bag. Everything else is held.</div>
           </div>
         </div>
         <div class="faq-item">
@@ -746,7 +772,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Unbound is intentionally small — between 10 and 15 women. The intimacy is the point. This is not a conference. It is a container, and a container requires boundaries.</div>
+            <div class="faq-answer-inner">Unbound is intentionally small, between 10 and 15 women. The intimacy is the point. This is not a conference. It is a container, and a container requires boundaries.</div>
           </div>
         </div>
         <div class="faq-item">
@@ -755,7 +781,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">That may be exactly why you're being called here. All of our facilitators are trauma-informed. You will never be pushed. You will always have the right to step back, step out, or simply be held. The retreat is designed for women in transition — not women who have it all figured out.</div>
+            <div class="faq-answer-inner">That may be exactly why you're being called here. All of our facilitators are trauma-informed. You will never be pushed. You will always have the right to step back, step out, or simply be held. The retreat is designed for women in transition, not women who have it all figured out.</div>
           </div>
         </div>
         <div class="faq-item">
@@ -764,7 +790,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Full refund up to 60 days before the retreat. 50% refund between 30–60 days. No refund within 30 days, but your spot may be transferred to another woman. Full details will be included in your registration agreement.</div>
+            <div class="faq-answer-inner">Full refund up to 60 days before the retreat. 50% refund between 30 and 60 days. No refund within 30 days, but your spot may be transferred to another woman. Full details will be included in your registration agreement.</div>
           </div>
         </div>
         <div class="faq-item">
@@ -773,7 +799,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Southern Utah — the exact venue will be confirmed and shared with registered attendees in Spring 2026. The region is wild, remote, and stunningly beautiful. Detailed travel instructions and a packing guide will be sent ahead of the retreat.</div>
+            <div class="faq-answer-inner">Southern Utah. The exact venue will be confirmed and shared with registered attendees in Spring 2026. The region is wild, remote, and stunningly beautiful. Detailed travel instructions and a packing guide will be sent ahead of the retreat.</div>
           </div>
         </div>
       </div>
@@ -789,10 +815,10 @@
         <div>
           <h2 class="section-title">Ready to <em>Reclaim</em></h2>
           <p class="apply-intro">
-            Spots are limited to 10–15 women. This form is your first step — not a commitment, but a declaration of readiness. <strong>We'll be in touch within 48 hours</strong> to confirm your place and share next steps.
+            Spots are limited to 10 to 15 women. This form is your first step. Not a commitment, but a declaration of readiness. <strong>We'll be in touch within 48 hours</strong> to confirm your place and share next steps.
           </p>
           <p class="apply-intro">
-            If you have questions before submitting, you're welcome to reach out directly. But know this: <strong>if you're here, reading this, feeling the pull</strong> — that's enough reason to begin.
+            If you have questions before submitting, you're welcome to reach out directly. But know this: <strong>if you're here, reading this, feeling the pull</strong>, that's enough reason to begin.
           </p>
           <p class="apply-note">
             No woman who is ready will be turned away for financial reasons. If cost is a barrier, mention it in your message below.
@@ -824,12 +850,12 @@
                 <label class="radio-label">
                   <input type="radio" name="room" value="shared" checked>
                   <span class="radio-custom"></span>
-                  Shared Room — $1,800
+                  Shared Room · $1,800
                 </label>
                 <label class="radio-label">
                   <input type="radio" name="room" value="private">
                   <span class="radio-custom"></span>
-                  Private Room — $2,200
+                  Private Room · $2,200
                 </label>
                 <label class="radio-label">
                   <input type="radio" name="room" value="unsure">
@@ -879,7 +905,7 @@
   <div class="footer-logo">Unbound</div>
   <div class="footer-meta">
     From Performance to Presence<br>
-    Southern Utah · September 2026
+    Southern Utah · September 10-13, 2026
   </div>
 </footer>
 <script>
