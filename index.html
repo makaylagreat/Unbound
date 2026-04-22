@@ -7,10 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
     --night: #090c0a;
     --soil: #101610;
@@ -22,9 +20,7 @@
     --smoke: #1a2419;
     --glow: rgba(74, 140, 92, 0.15);
   }
-
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--night);
     color: var(--bone);
@@ -34,7 +30,6 @@
     line-height: 1.75;
     overflow-x: hidden;
   }
-
   /* ── NAV ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -72,7 +67,6 @@
     transition: all 0.3s;
   }
   .nav-cta:hover { background: var(--ember); color: var(--bone); }
-
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
@@ -149,7 +143,6 @@
     0%, 100% { opacity: 0.3; transform: scaleY(1); }
     50% { opacity: 1; transform: scaleY(1.2); }
   }
-
   /* ── DIVIDER ── */
   .divider {
     display: flex; align-items: center; justify-content: center;
@@ -160,12 +153,10 @@
   .divider::before, .divider::after {
     content: ''; flex: 1; height: 1px; background: var(--smoke);
   }
-
   /* ── SECTIONS ── */
   section { padding: 7rem 0; }
   .container { max-width: 1100px; margin: 0 auto; padding: 0 4rem; }
   .container-narrow { max-width: 780px; margin: 0 auto; padding: 0 4rem; }
-
   .section-eyebrow {
     font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase;
     color: var(--terracotta); margin-bottom: 1.5rem; display: block;
@@ -177,7 +168,6 @@
     margin-bottom: 2rem;
   }
   .section-title em { font-style: italic; color: var(--sand); }
-
   /* ── INVITATION ── */
   .invitation { background: var(--soil); }
   .invitation-quote {
@@ -208,7 +198,6 @@
   .for-the-woman li::before {
     content: '—'; position: absolute; left: 0; color: var(--ember);
   }
-
   /* ── EXPERIENCE ── */
   .experience { background: var(--night); }
   .modalities-grid {
@@ -234,7 +223,6 @@
     color: var(--bone); margin-bottom: 0.75rem; font-weight: 400;
   }
   .modality-desc { font-size: 0.9rem; color: var(--ash); line-height: 1.7; }
-
   /* ── ARC / WEEKEND ── */
   .arc { background: var(--soil); }
   .arc-days { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 4rem; }
@@ -257,7 +245,6 @@
   }
   .arc-day li::before { content: '·'; position: absolute; left: 0; color: var(--ember); }
   .arc-day li:last-child { border-bottom: none; }
-
   /* ── INVESTMENT ── */
   .investment { background: var(--night); }
   .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 4rem; }
@@ -298,7 +285,6 @@
     font-style: italic; text-align: center; line-height: 1.8;
   }
   .scholarship-note strong { color: var(--sand); font-weight: 400; font-style: normal; }
-
   /* ── GUIDE ── */
   .guide { background: var(--soil); }
   .guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; margin-top: 4rem; }
@@ -333,7 +319,6 @@
     padding-left: 1.25rem; position: relative;
   }
   .guide-credentials li::before { content: '—'; position: absolute; left: 0; color: var(--ember); }
-
   /* ── FAQ ── */
   .faq { background: var(--night); }
   .faq-list { margin-top: 4rem; }
@@ -362,7 +347,6 @@
     padding-bottom: 1.75rem;
     color: var(--ash); font-size: 0.95rem; line-height: 1.9;
   }
-
   /* ── APPLICATION FORM ── */
   .apply { background: var(--soil); }
   .apply-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 6rem; align-items: start; margin-top: 4rem; }
@@ -436,7 +420,6 @@
     font-size: 1.5rem; font-weight: 300; color: var(--bone); margin-bottom: 0.5rem;
   }
   .form-success p { font-size: 0.9rem; color: var(--ash); }
-
   /* ── CLOSING CTA ── */
   .closing {
     background: var(--night); padding: 10rem 0;
@@ -481,7 +464,6 @@
     font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--ash);
   }
-
   /* ── FOOTER ── */
   footer {
     background: var(--soil);
@@ -498,14 +480,12 @@
     font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--ash); text-align: right; line-height: 1.9;
   }
-
   /* ── ANIMATIONS ── */
   .fade-up {
     opacity: 0; transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
   }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
-
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 1.25rem 2rem; }
@@ -526,7 +506,6 @@
 </style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Unbound</a>
@@ -538,7 +517,6 @@
   </ul>
   <a href="#apply" class="nav-cta">Reserve Your Spot</a>
 </nav>
-
 <!-- HERO -->
 <section class="hero">
   <p class="hero-eyebrow">A Women's Reclamation Retreat</p>
@@ -551,7 +529,6 @@
     <span>Descend</span>
   </div>
 </section>
-
 <!-- INVITATION -->
 <section class="invitation" id="invitation">
   <div class="container-narrow">
@@ -580,7 +557,6 @@
     </div>
   </div>
 </section>
-
 <!-- EXPERIENCE -->
 <section class="experience" id="experience">
   <div class="container">
@@ -588,7 +564,6 @@
       <span class="section-eyebrow">The Experience</span>
       <h2 class="section-title">The <em>Modalities</em></h2>
       <p style="color: var(--ash); max-width: 560px; font-size: 0.95rem;">Every element of the weekend serves a single arc: arrival → opening → descent → integration → emergence. These aren't activities. They're portals.</p>
-
       <div class="modalities-grid">
         <div class="modality">
           <div class="modality-symbol">✦</div>
@@ -624,7 +599,6 @@
     </div>
   </div>
 </section>
-
 <!-- ARC / WEEKEND -->
 <section class="arc" id="arc">
   <div class="container">
@@ -668,7 +642,6 @@
     </div>
   </div>
 </section>
-
 <!-- INVESTMENT -->
 <section class="investment" id="investment">
   <div class="container">
@@ -710,7 +683,6 @@
     </div>
   </div>
 </section>
-
 <!-- GUIDE -->
 <section class="guide" id="guide">
   <div class="container">
@@ -743,7 +715,6 @@
     </div>
   </div>
 </section>
-
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="container-narrow">
@@ -809,7 +780,6 @@
     </div>
   </div>
 </section>
-
 <!-- APPLICATION FORM -->
 <section class="apply" id="apply">
   <div class="container">
@@ -894,7 +864,6 @@
     </div>
   </div>
 </section>
-
 <!-- CLOSING CTA -->
 <section class="closing">
   <div class="closing-symbol">∿</div>
@@ -905,7 +874,6 @@
   </div>
   <p class="closing-sub">No performance required &nbsp;·&nbsp; Unsubscribe any time</p>
 </section>
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Unbound</div>
@@ -914,7 +882,6 @@
     Southern Utah · September 2026
   </div>
 </footer>
-
 <script>
   // FAQ accordion
   document.querySelectorAll('.faq-question').forEach(btn => {
@@ -925,20 +892,17 @@
       if (!isOpen) item.classList.add('open');
     });
   });
-
   // Fade-up on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
   // Application form
   document.getElementById('applyForm').addEventListener('submit', function(e) {
     e.preventDefault();
     this.style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
   });
-
   // Waitlist
   function handleWaitlist() {
     const email = document.getElementById('waitlistEmail').value;
