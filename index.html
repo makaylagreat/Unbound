@@ -295,18 +295,23 @@
   .scholarship-note strong { color: var(--sand); font-weight: 400; font-style: normal; }
   /* GUIDE */
   .guide { background: var(--soil); }
-  .guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; margin-top: 4rem; }
+  .guide-grid { display: grid; grid-template-columns: 340px 1fr; gap: 4rem; align-items: start; margin-top: 4rem; }
   .guide-photo {
     aspect-ratio: 3/4;
     background: var(--smoke);
     display: flex; align-items: center; justify-content: center;
     border: 1px solid rgba(45,92,58,0.3);
     position: relative; overflow: hidden;
+    max-width: 340px;
+  }
+  .guide-photo img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
   }
   .guide-photo::after {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(to bottom, transparent 60%, rgba(14,12,10,0.6));
+    background: linear-gradient(to bottom, transparent 70%, rgba(14,12,10,0.4));
+    pointer-events: none;
   }
   .guide-photo-placeholder {
     font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
@@ -627,8 +632,9 @@
           <ul>
             <li>Arrive, settle, be welcomed</li>
             <li>Communal dinner</li>
+            <li>Ecstatic dance</li>
             <li>Opening circle: what did you leave at the door?</li>
-            <li>Candlelit meditation &amp; first journal prompt</li>
+            <li>Candlelit meditation</li>
           </ul>
         </div>
         <div class="arc-day">
@@ -651,7 +657,6 @@
             <li>Sensual movement practice</li>
             <li>Free time &amp; integration journaling</li>
             <li>Communal dinner</li>
-            <li>Ecstatic dance ceremony</li>
           </ul>
         </div>
         <div class="arc-day">
@@ -675,25 +680,31 @@
       <span class="section-eyebrow">Your Guide</span>
       <div class="guide-grid">
         <div class="guide-photo">
-          <div class="guide-photo-placeholder">Your photo<br>coming soon</div>
+          <img src="images/makayla.jpg" alt="Makayla Greathouse">
         </div>
         <div>
           <h2 class="guide-name">Makayla<br>Greathouse</h2>
-          <div class="guide-title">Founder, Elevate Intent</div>
+          <div class="guide-title">Founder, Unbound</div>
           <p class="guide-bio">
-            Makayla is a People &amp; Culture strategist, leadership coach, and lifelong student of what it means to live an <strong>unperformed life</strong>. She has spent years studying the gap between who we perform to be and who we actually are, in organizations, in relationships, and in ourselves.
+            Makayla didn't build Unbound from theory. She built it from her own descent.
           </p>
           <p class="guide-bio">
-            She is the founder of Elevate Intent and has worked with leaders across some of the world's most ambitious companies. She is also a van-dweller, a writer, a dog mom, a yogi, and a woman who has done her <strong>own descent</strong> and come back changed.
+            A few years ago, her life cracked open. The version of herself she'd been performing, the composed one, the capable one, the one who held it together for everyone else, finally couldn't hold. She had worn a mask so long she'd forgotten it was a mask. Underneath, chaos was finding its way in.
+          </p>
+          <p class="guide-bio">
+            What followed was the slow, intentional work of rebuilding. Not back into who she used to be, but forward into who she actually is. Through somatic practice, embodiment, deep honesty, and time, she found her way home to the version of herself that had been waiting all along.
+          </p>
+          <p class="guide-bio">
+            This isn't a story of arrival. The practice is ongoing. It is imperfect. It is hers, and she's still in it.
           </p>
           <p class="guide-bio" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--sand);">
-            Unbound was born from her own reclamation. She built it for the women she recognized in herself.
+            Unbound was born from that reclamation. So was Elevate Intent, the People &amp; Culture practice she runs alongside it. She built both for the women she keeps recognizing in herself.
           </p>
           <ul class="guide-credentials">
             <li>Founder, Elevate Intent</li>
-            <li>Former Global Head of Employee Experience, Salesloft</li>
-            <li>Leadership coach, speaker, and facilitator</li>
-            <li>Student of somatic practice, embodiment, and inner work</li>
+            <li>Writer, coach, and facilitator</li>
+            <li>Student of somatic practice and embodiment</li>
+            <li>Van-dweller, dog mom, yogi</li>
           </ul>
         </div>
       </div>
