@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ. Unbound Retreat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --night: #090c0a;
+    --soil: #101610;
+    --ember: #2D5C3A;
+    --terracotta: #4A8C5C;
+    --sand: #A8C9A0;
+    --ash: #6a7d6a;
+    --bone: #E2EDE0;
+    --smoke: #1a2419;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--night);
+    color: var(--bone);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.5rem 4rem;
+    background: linear-gradient(to bottom, rgba(9,12,10,0.95), transparent);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sand);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ash);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--sand); }
+  .nav-cta {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    border: 1px solid var(--ember);
+    padding: 0.6rem 1.4rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .nav-cta:hover { background: var(--ember); color: var(--bone); }
+  /* PAGE HERO */
+  .page-hero {
+    min-height: 50vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 10rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 80%, rgba(45,92,58,0.28) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .page-hero-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 2rem;
+  }
+  .page-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--bone);
+    margin-bottom: 1.5rem;
+  }
+  .page-hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--sand);
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  /* SECTIONS */
+  section { padding: 5rem 0; }
+  .container-narrow { max-width: 780px; margin: 0 auto; padding: 0 4rem; }
+  /* FAQ */
+  .faq-list { margin-top: 2rem; }
+  .faq-item { border-bottom: 1px solid var(--smoke); }
+  .faq-question {
+    width: 100%; background: none; border: none; cursor: pointer;
+    text-align: left; padding: 1.75rem 0;
+    display: flex; justify-content: space-between; align-items: center;
+    color: var(--bone); font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 300; line-height: 1.4;
+    gap: 2rem; transition: color 0.3s;
+  }
+  .faq-question:hover { color: var(--sand); }
+  .faq-icon {
+    width: 24px; height: 24px; border: 1px solid var(--ember);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; color: var(--terracotta); font-size: 1rem;
+    transition: all 0.3s; line-height: 1;
+  }
+  .faq-item.open .faq-icon { background: var(--ember); color: var(--bone); transform: rotate(45deg); }
+  .faq-answer {
+    max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+  .faq-item.open .faq-answer { max-height: 400px; }
+  .faq-answer-inner {
+    padding-bottom: 1.75rem;
+    color: var(--ash); font-size: 0.95rem; line-height: 1.9;
+  }
+  /* SECTION TITLE */
+  .section-eyebrow {
+    font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 1.5rem; display: block;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 300; line-height: 1.15; color: var(--bone);
+    margin-bottom: 2rem;
+  }
+  .section-title em { font-style: italic; color: var(--sand); }
+  /* CTA */
+  .cta-back {
+    background: var(--soil);
+    text-align: center;
+    padding: 6rem 2rem;
+  }
+  .cta-back h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--sand);
+    margin-bottom: 2rem;
+  }
+  .cta-back a {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--bone);
+    background: var(--ember);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .cta-back a:hover { background: var(--terracotta); }
+  /* FOOTER */
+  footer {
+    background: var(--soil);
+    padding: 3rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid var(--smoke);
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--sand); font-weight: 300;
+  }
+  .footer-meta {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ash); text-align: right; line-height: 1.9;
+  }
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1.25rem 2rem; }
+    .nav-links { display: none; }
+    .container-narrow { padding: 0 2rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .footer-meta { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Unbound</a>
+  <ul class="nav-links">
+    <li><a href="index.html#experience">The Experience</a></li>
+    <li><a href="venue.html">The Space</a></li>
+    <li><a href="investment.html">Investment</a></li>
+    <li><a href="index.html#guide">Your Guide</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li>
+  </ul>
+  <a href="index.html#apply" class="nav-cta">Reserve Your Spot</a>
+</nav>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <p class="page-hero-eyebrow">Questions</p>
+  <h1 class="page-hero-title">What You're<br>Wondering</h1>
+  <p class="page-hero-subtitle">
+    Everything you might want to know before you say yes.
+  </p>
+</section>
+<!-- FAQ -->
+<section>
+  <div class="container-narrow fade-up">
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          Do I need experience with yoga, breathwork, or somatic practice?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">No. All that is required is willingness. The specialists who lead each session are experienced in working with women at all levels. You will never be asked to do anything beyond your capacity. Only beyond your comfort zone.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          What does "all inclusive" mean?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">From Thursday dinner through Sunday lunch: all meals, all facilitated sessions, all specialist fees, your accommodation, and post-retreat integration materials. You arrive with yourself and your bag. Everything else is held.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          How many women will be at the retreat?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Unbound is intentionally small, between 10 and 15 women. The intimacy is the point. This is not a conference. It is a container, and a container requires boundaries.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          What if I'm in a difficult place emotionally right now?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">That may be exactly why you're being called here. All of our facilitators are trauma-informed. You will never be pushed. You will always have the right to step back, step out, or simply be held. The retreat is designed for women in transition, not women who have it all figured out.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          What is the cancellation policy?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Full refund up to 60 days before the retreat. 50% refund between 30 and 60 days. No refund within 30 days, but your spot may be transferred to another woman. Full details will be included in your registration agreement.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Where exactly is the retreat located?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Southern Utah. The exact venue will be confirmed and shared with registered attendees in Spring 2026. The region is wild, remote, and stunningly beautiful. Detailed travel instructions and a packing guide will be sent ahead of the retreat.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CTA BACK -->
+<section class="cta-back">
+  <div class="fade-up">
+    <h2>Still have questions? Just reach out.</h2>
+    <a href="index.html#apply">Reserve Your Spot</a>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Unbound</div>
+  <div class="footer-meta">
+    From Performance to Presence<br>
+    Southern Utah · September 10-13, 2026
+  </div>
+</footer>
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  // Fade-up
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
