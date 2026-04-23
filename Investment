@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investment. Unbound Retreat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --night: #090c0a;
+    --soil: #101610;
+    --ember: #2D5C3A;
+    --terracotta: #4A8C5C;
+    --sand: #A8C9A0;
+    --ash: #6a7d6a;
+    --bone: #E2EDE0;
+    --smoke: #1a2419;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--night);
+    color: var(--bone);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.5rem 4rem;
+    background: linear-gradient(to bottom, rgba(9,12,10,0.95), transparent);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sand);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ash);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--sand); }
+  .nav-cta {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    border: 1px solid var(--ember);
+    padding: 0.6rem 1.4rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .nav-cta:hover { background: var(--ember); color: var(--bone); }
+  /* PAGE HERO */
+  .page-hero {
+    min-height: 50vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 10rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 80%, rgba(45,92,58,0.28) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .page-hero-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 2rem;
+  }
+  .page-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--bone);
+    margin-bottom: 1.5rem;
+  }
+  .page-hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--sand);
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  /* SECTIONS */
+  section { padding: 5rem 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 4rem; }
+  /* PRICING */
+  .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 3rem; }
+  .pricing-card {
+    background: var(--smoke); padding: 3rem;
+    position: relative; transition: background 0.3s;
+  }
+  .pricing-card:hover { background: #1e2b1e; }
+  .pricing-card.featured { background: #0d1a0e; border: 1px solid var(--ember); }
+  .pricing-badge {
+    position: absolute; top: -1px; right: 2rem;
+    background: var(--ember); color: var(--bone);
+    font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 0.4rem 1rem;
+  }
+  .pricing-tier {
+    font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--ash); margin-bottom: 1rem;
+  }
+  .pricing-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem; font-weight: 300; color: var(--bone);
+    line-height: 1; margin-bottom: 0.25rem;
+  }
+  .pricing-note { font-size: 0.75rem; color: var(--ash); margin-bottom: 2rem; }
+  .pricing-list { list-style: none; }
+  .pricing-list li {
+    font-size: 0.9rem; color: var(--ash); padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex; gap: 0.75rem; align-items: flex-start;
+  }
+  .pricing-list li::before { content: '·'; color: var(--ember); flex-shrink: 0; }
+  .pricing-list li:last-child { border-bottom: none; }
+  .scholarship-note {
+    margin: 3rem auto 0; max-width: 720px;
+    padding: 2rem;
+    border: 1px solid var(--smoke);
+    font-size: 0.95rem; color: var(--ash);
+    font-style: italic; text-align: center; line-height: 1.8;
+  }
+  .scholarship-note strong { color: var(--sand); font-weight: 400; font-style: normal; }
+  /* INTRO */
+  .intro-body {
+    color: var(--ash); line-height: 1.9; font-size: 1.05rem;
+    max-width: 720px; margin: 0 auto 1.5rem; text-align: center;
+  }
+  .intro-body strong { color: var(--bone); font-weight: 400; }
+  /* SECTION TITLE */
+  .section-eyebrow {
+    font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 1.5rem; display: block;
+    text-align: center;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 300; line-height: 1.15; color: var(--bone);
+    margin-bottom: 2rem; text-align: center;
+  }
+  .section-title em { font-style: italic; color: var(--sand); }
+  /* CTA */
+  .cta-back {
+    background: var(--soil);
+    text-align: center;
+    padding: 6rem 2rem;
+  }
+  .cta-back h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--sand);
+    margin-bottom: 2rem;
+  }
+  .cta-back a {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--bone);
+    background: var(--ember);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .cta-back a:hover { background: var(--terracotta); }
+  /* FOOTER */
+  footer {
+    background: var(--soil);
+    padding: 3rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid var(--smoke);
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--sand); font-weight: 300;
+  }
+  .footer-meta {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ash); text-align: right; line-height: 1.9;
+  }
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1.25rem 2rem; }
+    .nav-links { display: none; }
+    .container { padding: 0 2rem; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .footer-meta { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Unbound</a>
+  <ul class="nav-links">
+    <li><a href="index.html#experience">The Experience</a></li>
+    <li><a href="venue.html">The Space</a></li>
+    <li><a href="investment.html" class="active">Investment</a></li>
+    <li><a href="index.html#guide">Your Guide</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <a href="index.html#apply" class="nav-cta">Reserve Your Spot</a>
+</nav>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <p class="page-hero-eyebrow">The Investment</p>
+  <h1 class="page-hero-title">Your Place<br>at the Fire</h1>
+  <p class="page-hero-subtitle">
+    This retreat is intentionally small, between 10 and 15 women, so that every woman receives the depth of experience she came for.
+  </p>
+</section>
+<!-- PRICING -->
+<section>
+  <div class="container fade-up">
+    <span class="section-eyebrow">All Inclusive</span>
+    <h2 class="section-title">Choose Your <em>Container</em></h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-tier">Shared Room</div>
+        <div class="pricing-price">$1,800</div>
+        <div class="pricing-note">Per person · All inclusive</div>
+        <ul class="pricing-list">
+          <li>3 nights shared accommodation</li>
+          <li>All meals: Thursday dinner through Sunday lunch</li>
+          <li>All sessions &amp; specialist facilitation</li>
+          <li>Post-retreat integration guide</li>
+          <li>Access to the full Unbound container</li>
+        </ul>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Private</div>
+        <div class="pricing-tier">Private Room</div>
+        <div class="pricing-price">$2,200</div>
+        <div class="pricing-note">Per person · All inclusive</div>
+        <ul class="pricing-list">
+          <li>3 nights private accommodation</li>
+          <li>All meals: Thursday dinner through Sunday lunch</li>
+          <li>All sessions &amp; specialist facilitation</li>
+          <li>Post-retreat integration guide</li>
+          <li>Access to the full Unbound container</li>
+        </ul>
+      </div>
+    </div>
+    <div class="scholarship-note">
+      A limited number of <strong>need-based partial scholarships</strong> are available.<br>
+      If cost is a barrier, reach out. No woman who is ready will be turned away for financial reasons.
+    </div>
+  </div>
+</section>
+<!-- CTA BACK -->
+<section class="cta-back">
+  <div class="fade-up">
+    <h2>Ready to claim your place?</h2>
+    <a href="index.html#apply">Reserve Your Spot</a>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Unbound</div>
+  <div class="footer-meta">
+    From Performance to Presence<br>
+    Southern Utah · September 10-13, 2026
+  </div>
+</footer>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
