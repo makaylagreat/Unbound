@@ -76,6 +76,50 @@
     transition: all 0.3s;
   }
   .nav-cta:hover { background: var(--ember); color: var(--bone); }
+  /* MOBILE MENU */
+  .nav-toggle {
+    display: none;
+    background: none; border: none; cursor: pointer;
+    padding: 0.5rem; flex-direction: column; gap: 5px;
+  }
+  .nav-toggle span {
+    display: block; width: 24px; height: 1px;
+    background: var(--sand); transition: all 0.3s;
+  }
+  .mobile-menu {
+    position: fixed; inset: 0;
+    background: var(--night);
+    z-index: 200;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+  }
+  .mobile-menu.open { opacity: 1; visibility: visible; }
+  .mobile-menu ul { list-style: none; text-align: center; padding: 0; }
+  .mobile-menu li { margin: 1.25rem 0; }
+  .mobile-menu a {
+    color: var(--bone); text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 300;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+  }
+  .mobile-menu a:hover { color: var(--sand); }
+  .mobile-menu a.cta {
+    display: inline-block; margin-top: 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--bone);
+    background: var(--ember); padding: 1rem 2.5rem;
+  }
+  .mobile-menu-close {
+    position: absolute; top: 1.5rem; right: 2rem;
+    background: none; border: none;
+    color: var(--sand); font-size: 2.5rem;
+    cursor: pointer; line-height: 1;
+    font-family: 'Cormorant Garamond', serif;
+  }
   /* PAGE HERO */
   .page-hero {
     min-height: 50vh;
@@ -211,6 +255,8 @@
   @media (max-width: 900px) {
     nav { padding: 1.25rem 2rem; }
     .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-toggle { display: flex; }
     .container-narrow { padding: 0 2rem; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
     .footer-meta { text-align: center; }
@@ -229,7 +275,22 @@
     <li><a href="faq.html" class="active">FAQ</a></li>
   </ul>
   <a href="index.html#apply" class="nav-cta">Reserve Your Spot</a>
+  <button class="nav-toggle" aria-label="Open menu" id="navToggle">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" aria-label="Close menu" id="mobileMenuClose">&times;</button>
+  <ul>
+    <li><a href="index.html#experience">The Experience</a></li>
+    <li><a href="venue.html">The Space</a></li>
+    <li><a href="investment.html">Investment</a></li>
+    <li><a href="index.html#guide">Your Guide</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="index.html#apply" class="cta">Reserve Your Spot</a></li>
+  </ul>
+</div>
 <!-- PAGE HERO -->
 <section class="page-hero">
   <p class="page-hero-eyebrow">Questions</p>
@@ -315,6 +376,17 @@
   </div>
 </footer>
 <script>
+  // Mobile menu
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileMenuClose = document.getElementById('mobileMenuClose');
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener('click', () => mobileMenu.classList.add('open'));
+    mobileMenuClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    });
+  }
   // FAQ accordion
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
