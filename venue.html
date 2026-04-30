@@ -173,7 +173,7 @@
   .gallery { background: var(--night); }
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     margin-top: 3rem;
   }
@@ -189,24 +189,6 @@
   .gallery-item:hover { transform: translateY(-4px); }
   .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .gallery-item.feature { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
-  .gallery-placeholder {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    color: var(--ash);
-    font-size: 0.9rem;
-    text-align: center;
-    padding: 1rem;
-  }
-  .gallery-placeholder small {
-    display: block;
-    font-family: 'Jost', sans-serif;
-    font-style: normal;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ember);
-    margin-top: 0.5rem;
-  }
   /* FEATURES */
   .features { background: var(--soil); }
   .features-grid {
@@ -306,7 +288,7 @@
     .nav-toggle { display: flex; }
     .container, .container-narrow { padding: 0 2rem; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    .gallery-item.feature { grid-column: span 2; grid-row: span 1; }
+    .gallery-item.feature { grid-column: span 2; grid-row: span 2; aspect-ratio: 4/3; }
     .features-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
     .footer-meta { text-align: center; }
@@ -371,62 +353,33 @@
     <span class="section-eyebrow">The Space</span>
     <h2 class="section-title">A Look <em>Inside</em></h2>
 
-    <!--
-      TO ADD PHOTOS:
-      1. Save photos into an /images folder inside this repo
-      2. Replace the "gallery-placeholder" divs with <img> tags, like:
-         <img src="images/living-room.jpg" alt="Living room">
-    -->
-
     <div class="gallery-grid">
       <div class="gallery-item feature">
-        <!-- <img src="images/hero-space.jpg" alt="The main gathering space"> -->
-        <div class="gallery-placeholder">
-          The main gathering space
-          <small>Add photo here</small>
-        </div>
+        <img src="king-bed.jpg" alt="King bed with vaulted ceiling and forest view">
       </div>
       <div class="gallery-item">
-        <div class="gallery-placeholder">
-          Living + circle space
-          <small>Add photo here</small>
-        </div>
+        <img src="living-room.jpg" alt="Living room with leather and corduroy couches">
       </div>
       <div class="gallery-item">
-        <div class="gallery-placeholder">
-          Kitchen + communal table
-          <small>Add photo here</small>
-        </div>
+        <img src="balcony-view.jpg" alt="Private balcony overlooking the forest">
       </div>
       <div class="gallery-item">
-        <div class="gallery-placeholder">
-          Bedroom detail
-          <small>Add photo here</small>
-        </div>
+        <img src="green-bedroom.jpg" alt="Bedroom with twin beds and green linens">
       </div>
       <div class="gallery-item">
-        <div class="gallery-placeholder">
-          Outdoor space
-          <small>Add photo here</small>
-        </div>
+        <img src="loft-bedroom.jpg" alt="Loft bedroom with log bunk bed">
       </div>
       <div class="gallery-item">
-        <div class="gallery-placeholder">
-          Surrounding landscape
-          <small>Add photo here</small>
-        </div>
+        <img src="bunk-room.jpg" alt="Shared bunk room">
       </div>
       <div class="gallery-item">
-        <div class="gallery-placeholder">
-          Evening light
-          <small>Add photo here</small>
-        </div>
+        <img src="deck.jpg" alt="Deck with seating and string lights">
       </div>
       <div class="gallery-item">
-        <div class="gallery-placeholder">
-          Quiet corner
-          <small>Add photo here</small>
-        </div>
+        <img src="hot-tub.jpg" alt="Hot tub on covered patio">
+      </div>
+      <div class="gallery-item">
+        <img src="exterior.jpg" alt="Exterior view of the cabin">
       </div>
     </div>
   </div>
