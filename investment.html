@@ -166,6 +166,37 @@
   .container { max-width: 1100px; margin: 0 auto; padding: 0 4rem; }
   /* PRICING */
   .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 3rem; }
+  .pricing-regular {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 300;
+    color: var(--ash); text-decoration: line-through;
+    margin-bottom: 0.25rem;
+  }
+  .pricing-availability {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 1.25rem;
+  }
+  .pricing-description {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 1rem;
+    color: var(--sand); margin-bottom: 1.75rem; line-height: 1.5;
+  }
+  .early-bird-callout {
+    margin: 0 auto 3rem;
+    max-width: 720px;
+    padding: 1.75rem 2rem;
+    border: 1px solid var(--ember);
+    background: rgba(74,140,92,0.08);
+    text-align: center;
+  }
+  .early-bird-callout strong {
+    color: var(--bone); font-family: 'Jost', sans-serif;
+    font-size: 1rem; letter-spacing: 0.05em;
+  }
+  .early-bird-callout p {
+    color: var(--sand); font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 1.05rem; margin-top: 0.5rem;
+  }
   .pricing-card {
     background: var(--smoke); padding: 3rem;
     position: relative; transition: background 0.3s;
@@ -324,30 +355,70 @@
 <section>
   <div class="container fade-up">
     <span class="section-eyebrow">All Inclusive</span>
-    <h2 class="section-title">Choose Your <em>Container</em></h2>
+    <h2 class="section-title">Choose Your <em>Space</em></h2>
+    <div class="early-bird-callout">
+      <strong>EARLY BIRD PRICING IS LIVE</strong>
+      <p>The first 5 deposits lock in $200 off any tier. Once those 5 seats fill, prices return to regular. No code needed.</p>
+    </div>
     <div class="pricing-grid">
       <div class="pricing-card">
-        <div class="pricing-tier">Shared Room</div>
-        <div class="pricing-price">$1,800</div>
-        <div class="pricing-note">Per person · All inclusive</div>
+        <div class="pricing-tier">Bunk Bed, Shared Room</div>
+        <div class="pricing-regular">$1,797</div>
+        <div class="pricing-price">$1,597</div>
+        <div class="pricing-note">Early Bird · Per person · All inclusive</div>
+        <div class="pricing-availability">6 spots available · early deposits get first pick</div>
+        <div class="pricing-description">A comfortable bunk in one of our shared rooms. The most accessible tier, and often where the best late-night conversations happen.</div>
         <ul class="pricing-list">
-          <li>3 nights shared accommodation</li>
+          <li>3 nights in a shared bunk room</li>
           <li>All meals: Thursday dinner through Sunday lunch</li>
           <li>All sessions &amp; specialist facilitation</li>
-          <li>Post-retreat integration guide</li>
+          <li>30-day post-retreat integration call</li>
+          <li>Access to the full Unbound container</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier">Bring Your Person</div>
+        <div class="pricing-regular">$1,897 each</div>
+        <div class="pricing-price">$1,697 each</div>
+        <div class="pricing-note">Early Bird · Per person · All inclusive</div>
+        <div class="pricing-availability">1 king room available for 2 friends</div>
+        <div class="pricing-description">Coming with your sister, your best friend, your chosen person? Book the second king room together. One king bed, shared. Same closeness you already have, now with three nights to actually use it.</div>
+        <ul class="pricing-list">
+          <li>3 nights together in a king room</li>
+          <li>All meals: Thursday dinner through Sunday lunch</li>
+          <li>All sessions &amp; specialist facilitation</li>
+          <li>30-day post-retreat integration call</li>
+          <li>Access to the full Unbound container</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier">Own Bed, Shared Room</div>
+        <div class="pricing-regular">$1,997</div>
+        <div class="pricing-price">$1,797</div>
+        <div class="pricing-note">Early Bird · Per person · All inclusive</div>
+        <div class="pricing-availability">2 spots available · double bed in 2-person room</div>
+        <div class="pricing-description">A double bed of your own in a room shared with one other attendee. All the rest, with a built-in retreat companion.</div>
+        <ul class="pricing-list">
+          <li>3 nights with a double bed</li>
+          <li>All meals: Thursday dinner through Sunday lunch</li>
+          <li>All sessions &amp; specialist facilitation</li>
+          <li>30-day post-retreat integration call</li>
           <li>Access to the full Unbound container</li>
         </ul>
       </div>
       <div class="pricing-card featured">
         <div class="pricing-badge">Most Private</div>
-        <div class="pricing-tier">Private Room</div>
-        <div class="pricing-price">$2,200</div>
-        <div class="pricing-note">Per person · All inclusive</div>
+        <div class="pricing-tier">Private Sanctuary</div>
+        <div class="pricing-regular">$2,297</div>
+        <div class="pricing-price">$2,097</div>
+        <div class="pricing-note">Early Bird · Per person · All inclusive</div>
+        <div class="pricing-availability">2 rooms available</div>
+        <div class="pricing-description">Your own king room. Your own door to close. For the woman who knows that solitude is not the same as loneliness, and that privacy is a form of care.</div>
         <ul class="pricing-list">
           <li>3 nights private accommodation</li>
           <li>All meals: Thursday dinner through Sunday lunch</li>
           <li>All sessions &amp; specialist facilitation</li>
-          <li>Post-retreat integration guide</li>
+          <li>30-day post-retreat integration call</li>
           <li>Access to the full Unbound container</li>
         </ul>
       </div>
